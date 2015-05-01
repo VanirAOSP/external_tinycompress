@@ -1,10 +1,9 @@
 LOCAL_PATH:= $(call my-dir)
 
+include $(CLEAR_VARS)
 ifneq ($(filter msm8994 msm8992,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_CFLAGS += -DHAS_EXTRA_FLAC_METADATA
 endif
-
-include $(CLEAR_VARS)
 LOCAL_C_INCLUDES:= $(LOCAL_PATH)/include
 # It's possible only ifneq ($(TARGET_ARCH),arm64) may be necessary here
 ifdef ($(TARGET_PREBUILT_KERNEL),)
